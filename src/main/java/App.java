@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int opcion = 0;
+        int option;
         do {
             System.out.println("-------------");
             System.out.println("Aplicacion de mensajes");
@@ -13,20 +13,20 @@ public class App {
             System.out.println("4. Eliminar mensaje");
             System.out.println("5. Salir");
             //leemos la opcion
-            opcion = sc.nextInt();
+            option = sc.nextInt();
 
-            switch (opcion) {
+            switch (option) {
                 case 1:
                     MessageService.createMessage();
                     break;
                 case 2:
-                    MessageService.readMessage();
+                    MessageService.readMessages();
                     break;
                 case 3:
-                    MessageService.deleteMessage();
+                    MessageService.updateMessage();
                     break;
                 case 4:
-                    MessageService.updateMessage();
+                    MessageService.deleteMessage();
                     break;
                 case 5:
                     System.out.println("Adios...");
@@ -35,7 +35,7 @@ public class App {
                     System.out.println("Opcion invalida.");
                     break;
             }
-        } while (opcion != 5);
+        } while (option != 5);
 
     }
 

@@ -1,17 +1,22 @@
-public class Message {
+package models;
+
+public class Message extends AbstractMessage{
     int messageId;
     String message;
     String messageAuthor;
     String messageDate;
 
-    public Message() {
-
-    }
+    public Message() {}
 
     public Message(String message, String messageAuthor, String messageDate) {
         this.message = message;
         this.messageAuthor = messageAuthor;
         this.messageDate = messageDate;
+    }
+
+    @Override
+    public boolean isNull() {
+        return false;
     }
 
     public int getMessageId() {
