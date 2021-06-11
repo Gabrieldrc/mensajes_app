@@ -4,20 +4,20 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private Connection connection = null;
-    public Connection getConnection() {
-        if (connection == null) {
+    private static Connection singletonConn = null;
+    public static Connection getConnection() {
+        if (singletonConn == null) {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                connection = DriverManager.getConnection(
+                singletonConn = DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/tests",
                         "gabriel",
                         "123654"
                 );
             } catch (SQLException | ClassNotFoundException e) {
-                System.out.println(e);
+                e.printStackTrace();
             }
         }
-        return connection;
+        return singletonConn;
     }
 }
