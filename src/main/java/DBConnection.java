@@ -14,9 +14,6 @@ public class DBConnection {
                         "gabriel",
                         "123654"
                 );
-                if (connection != null) {
-                    System.out.println("Conexion exitosa");
-                }
             } catch (SQLException | ClassNotFoundException e) {
                 System.out.println(e);
             }
