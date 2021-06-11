@@ -1,4 +1,3 @@
-import java.sql.Connection;
 import java.util.Scanner;
 
 public class App {
@@ -18,16 +17,16 @@ public class App {
 
             switch (opcion) {
                 case 1:
-                    MensajesService.crearMensaje();
+                    MessageService.createMessage();
                     break;
                 case 2:
-                    MensajesService.listarMensajes();
+                    MessageService.readMessage();
                     break;
                 case 3:
-                    MensajesService.borrarMensaje();
+                    MessageService.deleteMessage();
                     break;
                 case 4:
-                    MensajesService.editarMensaje();
+                    MessageService.updateMessage();
                     break;
                 case 5:
                     System.out.println("Adios...");
